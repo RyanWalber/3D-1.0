@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");     // W/S ou setas
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         Vector3 newVelocity = movement * speed;
-        newVelocity.y = rb.velocity.y; // mantém a gravidade
-        rb.velocity = newVelocity;
+        newVelocity.y = rb.linearVelocity.y; // mantï¿½m a gravidade
+        rb.linearVelocity = newVelocity;
     }
 }
