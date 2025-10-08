@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class ItemColetavel : MonoBehaviour
 {
-    public UIItens uiItens; // arraste o Canvas com script UIItens aqui no Inspector
+    public UIItens uiItens; // arraste o Canvas com UIItens aqui
 
     private void OnTriggerEnter(Collider outro)
     {
-        // Verifica se o que tocou é o Player
+        // Verifica se quem colidiu é o Player
         if (outro.CompareTag("Player"))
         {
-            uiItens.AtualizarItens(); // aumenta a contagem na UI
-            Destroy(gameObject); // destrói o item da cena
+            // Atualiza a contagem de itens na UI
+            if (uiItens != null)
+            {
+                uiItens.AtualizarItens();
+            }
+
+            // Remove o item da cena
+            Destroy(gameObject);
         }
     }
 }
