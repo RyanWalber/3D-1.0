@@ -15,7 +15,9 @@ public class MovimentoJogador : MonoBehaviour
         float movimentoHorizontal = Input.GetAxis("Horizontal");
         float movimentoVertical = Input.GetAxis("Vertical");
 
-        Vector3 movimento = new Vector3(movimentoHorizontal, 0f, movimentoVertical);
+        // Aqui trocamos os eixos X e Z
+        Vector3 movimento = new Vector3(movimentoVertical, 0f, -movimentoHorizontal);
+
         rb.AddForce(movimento * velocidade);
     }
 }

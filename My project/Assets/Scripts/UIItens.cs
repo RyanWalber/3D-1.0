@@ -1,9 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro; // Biblioteca do TextMeshPro
 
 public class UIItens : MonoBehaviour
 {
-    public Text textoItens; // arraste o Text aqui pelo Inspector
+    public TMP_Text textoItens; // arraste o TextMeshProUGUI aqui pelo Inspector
     private int quantidadeItens = 0;
 
     // Chamado quando o jogador coleta um item
